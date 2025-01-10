@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=2, initial-scale=1.0">
+    <title>Monitoramento</title>
+    <link rel="stylesheet" href="./style/lobby.css">
+</head>
+<body>
+    <header>
+    <h1>Sistema de Montoramento</h1>
+    
+
+    <a id="logoff" href="teste"><img width="35px" height="32px"  src="./images/logoff.png" alt=""></a>
+    </header>
+    <hero>
+        <table>
+            <thead>
+           
+            <th>cidade</th>
+            <th>local</th>
+            <th>status</t/h>
+            <th>data</th>
+            </thead>
+            <tbody>
+                
+                
+    <% for (let i = 0; i < data.reservatorios.length; i++) { %>
+        <tr>
+            <th><%= data.reservatorios[i].cidade %></th>
+            <th><%= data.reservatorios[i].local %></th>
+            <th><%= data.reservatorios[i].status %></th>
+            <th><%= data.reservatorios[i].data %></th>
+            
+        
+        </tr>
+      <% } %>
+                
+      
+            </tbody>
+        </table>
+    </hero>
+
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script/socket.js"></script>
+</body>
+</html>
