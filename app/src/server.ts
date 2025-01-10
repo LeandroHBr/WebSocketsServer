@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(router)
 const http = require('http');
 const server = http.createServer(app);
+
 const io = new Server(server,{connectionStateRecovery: {}});
 
 let messages = []; // Array to store messages
@@ -33,20 +34,15 @@ interface user_data {
 const users:user_data[] = []
 
 
-io.on('connection', (client) => {
-console.log('seja bem vindo')
-  client.on('message',(data)=>{
-    io.emit("response","ok")
-  })
-
-  
-
-  
-
-
-
-})
-  
 server.listen(3000,()=>{
   console.log('connectado')
 })
+
+
+io.on('connection', (client) => {
+console.log('seja bem vindo')
+  client.emit('message',"oi")
+
+
+})
+  
