@@ -6,7 +6,10 @@ import router from './routes/routes';
 import bodyParser from 'body-parser';
 import cors from 'cors'
 const app = express();
-app.use(cors())
+app.use(cors({
+  origin: '*', 
+  credentials: true 
+}))
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../public/views'));
 
