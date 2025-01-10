@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors'
 const app = express();
 app.use(cors({
-  origin: ['https://websocketsserver-production.up.railway.app/', 'http://localhost:3000'], 
+  origin: "*", 
   credentials: true 
 }))
 app.set('view engine', 'ejs');
@@ -19,7 +19,10 @@ app.use(router)
 const http = require('http');
 const server = http.createServer(app);
 
-const io = new Server(server,{connectionStateRecovery: {}});
+const io = new Server(server,{connectionStateRecovery: {},  cors: {
+  origin: '*',
+}
+});
 
 let messages = []; // Array to store messages
 
