@@ -4,7 +4,7 @@
   "main": "server.js",
   "scripts": {
     "dev": "ts-node-dev app/src/server.ts ",
-    "start": "node build/src/server.js"
+    "start": "ts-node-dev app/src/server.ts"
   },
   "author": "",
   "license": "ISC",
