@@ -7,7 +7,7 @@ import bodyParser from 'body-parser';
 import cors from 'cors'
 const app = express();
 app.use(cors({
-  origin: '*', 
+  origin: ['https://websocketsserver-production.up.railway.app/', 'http://localhost:3000'], 
   credentials: true 
 }))
 app.set('view engine', 'ejs');
