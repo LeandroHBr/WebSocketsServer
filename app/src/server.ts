@@ -42,8 +42,8 @@ interface user_data {
 const users:user_data[] = []
 
 
-server.listen(443,()=>{
-  console.log('connectado')
+server.listen(8080,()=>{
+  console.log('connectado a porta 8080')
 })
 
 io.emit("teste","teste")
