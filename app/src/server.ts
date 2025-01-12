@@ -8,7 +8,9 @@ import cors from 'cors'
 const app = express();
 app.use(cors({
   origin: "*", 
-  credentials: true 
+  methods: "*",
+  allowedHeaders: "*"
+  
 }))
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../public/views'));
@@ -40,15 +42,19 @@ interface user_data {
 const users:user_data[] = []
 
 
-server.listen(3000,()=>{
+server.listen(443,()=>{
   console.log('connectado')
 })
 
+io.emit("teste","teste")
 
 io.on('connection', (client) => {
 console.log('seja bem vindo')
   client.emit('message',"oi")
 
-
+  client.on("disconnection",()=>{
+    io.emit("hello", "world");
+    console.log("aaaaa");
+  })
 })
   
